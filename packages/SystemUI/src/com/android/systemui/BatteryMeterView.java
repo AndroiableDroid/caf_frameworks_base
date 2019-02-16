@@ -235,9 +235,11 @@ public class BatteryMeterView extends LinearLayout implements
     }
 
     @Override
-    public void onBatteryLevelChanged(int level, boolean pluggedIn, boolean charging) {
+    public void onBatteryLevelChanged(int level, boolean pluggedIn, boolean charging,
+            boolean fastCharging) {
         mDrawable.setBatteryLevel(level);
         mDrawable.setCharging(pluggedIn);
+        mDrawable.setFastCharging(fastCharging);
         mLevel = level;
         updatePercentText();
         setContentDescription(
